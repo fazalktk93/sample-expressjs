@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: nodebackend
-          image: docker push registry.digitalocean.com/kube-app-registry/nodebackend:latest
+          image: registry.digitalocean.com/kube-app-registry/nodebackend:latest
           ports:
             - containerPort: 3000
 ---
