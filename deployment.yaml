@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodebackend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nodebackend
+  template:
+    metadata:
+      labels:
+        app: nodebackend
+    spec:
+      containers:
+        - name: nodebackend
+          image: docker push registry.digitalocean.com/kube-app-registry/nodebackend:latest
+          ports:
+            - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodebackend
+spec:
+  type: LoadBalancer
+  selector:
+    app: nodebackend
+  ports:
+    - port: 80
+      targetPort: 3000
