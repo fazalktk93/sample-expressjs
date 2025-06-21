@@ -21,7 +21,7 @@ const startupMessage = `[48;2;0;0;0m [48;2;0;0;0m [48;2;0;0;0m [48;2;0;0;0m
 
 app.use(cors());
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 
 // ✅ Add this route for your React frontend to call
 app.get("/api/hello", (req, res) => {
